@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function Form({ items, setItems }) {
   async function handleSubmit(event) {
     event.preventDefault();
@@ -12,12 +14,16 @@ export default function Form({ items, setItems }) {
     });
 
     setItems(items);
+    document.getElementById("form").reset();
+    document.getElementById("myId1").selectedIndex = 0;
+    document.getElementById("myId2").selectedIndex = 0;
+    document.getElementById("myId3").selectedIndex = 0;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit} id="form" className="form-container">
       <label>Name</label>
-      <select required name="name">
+      <select id="myId1" required name="name">
         <option value="" disabled selected hidden>
           Which User is it?
         </option>
@@ -30,7 +36,7 @@ export default function Form({ items, setItems }) {
       <label>Content</label>
       <textarea required type="text" name="content"></textarea>
       <label>Category</label>
-      <select required name="category">
+      <select id="myId2" required name="category">
         <option value="" disabled selected hidden>
           Choose a category
         </option>
@@ -39,7 +45,7 @@ export default function Form({ items, setItems }) {
         <option value="television">Television</option>
       </select>
       <label>Tag</label>
-      <select required name="tag">
+      <select id="myId3" required name="tag">
         <option value="" disabled selected hidden>
           Choose a tag
         </option>
