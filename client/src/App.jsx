@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Post Browser</h1>
+      <h1>My posts</h1>
       <nav>
         <Link className="link" to="/home">
           Home
