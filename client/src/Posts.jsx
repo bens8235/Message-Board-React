@@ -6,7 +6,9 @@ export default function Posts() {
 
   useEffect(function () {
     async function fetchData() {
-      const response = await fetch("http://localhost:8080/posts");
+      const response = await fetch(
+        "https://message-board-server-react.onrender.com/posts"
+      );
       const data = await response.json();
       setItems(data);
     }

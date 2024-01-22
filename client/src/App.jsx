@@ -9,7 +9,9 @@ export default function App() {
   useEffect(
     function () {
       async function fetchData() {
-        const response = await fetch("http://localhost:8080/all-messages");
+        const response = await fetch(
+          "https://message-board-server-react.onrender.com/all-messages"
+        );
         const data = await response.json();
         setItems(data);
       }

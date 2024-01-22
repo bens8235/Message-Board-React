@@ -5,7 +5,7 @@ export default function Form({ items, setItems }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formValues = Object.fromEntries(formData);
-    await fetch("http://localhost:8080/posts", {
+    await fetch("https://message-board-server-react.onrender.com/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
